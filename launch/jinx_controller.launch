@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+
+	<remap from="/scan" to="/base_laser1_scan" />
+	
+	<!--<include file="$(find mobot_urdf)/launch/mobot_w_lidar.launch"/>
+	<arg name="dist" default="1.5" />
+	<arg name="rad" default="0.5" />-->
+
+	<node name= "des_state_subscriber" pkg= "p5_beta" type= "des_state_subscriber" output="screen" /> 
+	<!--<node name= "des_state_publisher" pkg= "p5_beta" type= "des_state_publisher" output="screen" /> -->
+	<node name= "lidar_braker2" pkg= "p5_beta" type= "lidar_braker2" args="1.0 0.5" output="screen" /> 
+
+</launch>

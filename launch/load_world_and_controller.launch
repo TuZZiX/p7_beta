@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+	<include
+		file="$(find gazebo_ros)/launch/empty_world.launch"
+		>
+		<arg
+			name="world_name"
+			value="$(find p7_beta)/launch/mobot.world"
+			/>
+	</include>
+
+	<include
+		file="$(find mobot_urdf)/launch/mobot_w_lidar.launch"
+		/>
+
+	<node
+		pkg="rviz"
+		name="rviz"
+		type="rviz"
+		/>
+
+	<node
+		name= "des_state_subscriber"
+		pkg= "p7_beta"
+		type= "des_state_subscriber"
+		output="screen"
+		/> 
+
+	<node
+		name= "lidar_braker"
+		pkg= "p7_beta"
+		type= "lidar_braker"
+		output="screen"
+		/> 
+
+	<node
+		pkg="p7_beta"
+		name="drive_in_circles"
+		type="drive_in_circles"
+		output="screen"
+		/>
+
+	<node
+		pkg="p7_beta"
+		name="lswrto"
+		type="lswrto"
+		output="screen"
+		args="10 3 1"
+		/>
+	<!-- Original args: 10 3 1 -->
+</launch>
