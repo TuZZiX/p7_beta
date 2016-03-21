@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <launch>
-	<remap from="/scan" to="/base_laser1_scan" />
+	<include
+		file="$(find gazebo_ros)/launch/empty_world.launch"
+		>
+		<!-- <arg -->
+		<!-- 	name="world_name" -->
+		<!-- 	value="$(find p7_beta)/launch/mobot.world" -->
+		<!-- 	/> -->
+	</include>
+
+	<include
+		file="$(find mobot_urdf)/launch/mobot_w_lidar.launch"
+		/>
 
 	<node
 		pkg="rviz"
@@ -16,10 +27,9 @@
 		/> 
 
 	<node
-		name= "lidar_braker2"
+		name= "lidar_braker"
 		pkg= "p7_beta"
-		type= "lidar_braker2"
-		args="1.0 0.5"
+		type= "lidar_braker"
 		/> 
 
 	<node
