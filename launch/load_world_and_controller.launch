@@ -3,10 +3,10 @@
 	<include
 		file="$(find gazebo_ros)/launch/empty_world.launch"
 		>
-		<arg
-			name="world_name"
-			value="$(find p7_beta)/launch/mobot.world"
-			/>
+		<!-- <arg -->
+		<!-- 	name="world_name" -->
+		<!-- 	value="$(find p7_beta)/launch/mobot.world" -->
+		<!-- 	/> -->
 	</include>
 
 	<include
@@ -30,21 +30,12 @@
 		name= "lidar_braker"
 		pkg= "p7_beta"
 		type= "lidar_braker"
-		output="screen"
 		/> 
-
-	<node
-		pkg="p7_beta"
-		name="drive_in_circles"
-		type="drive_in_circles"
-		output="screen"
-		/>
 
 	<node
 		pkg="p7_beta"
 		name="lswrto"
 		type="lswrto"
-		output="screen"
 		args="10 3 1"
 		/>
 	<!-- Original args: 10 3 1 -->
