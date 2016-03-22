@@ -171,7 +171,7 @@ void SteeringController::lin_steering_algorithm() {
     ROS_INFO("des_state_phi, odom_phi, heading err = %f, %f, %f", des_state_phi_,odom_phi_,heading_err);
     ROS_INFO("lateral err, trip dist err = %f, %f",lateral_err,trip_dist_err);
 
-	// do something clever with this information     
+    // do something clever with this information     
     controller_speed = des_state_vel_ + K_TRIP_DIST*trip_dist_err; //you call that clever ?!?!?!? should speed up/slow down to null out 
     //controller_omega = des_state_omega_; //ditto
     controller_omega = des_state_omega_ + K_PHI*heading_err + K_DISP*lateral_err;
@@ -188,19 +188,19 @@ void SteeringController::lin_steering_algorithm() {
 }
 
 int main(int argc, char** argv) {
-	if (argc < 4) {
-		printf("Wrong number of arguments.  Using default values.\n"
-			"Usage: lswrto K_PHI K_DISP K_TRIP_DIST\n"
-			   "K_PHI       Gain coefficient for how aggressively robot returns to angle.\n"
-			   "K_DISP      Gain coefficient for how aggressively robot returns to path.\n"
-			   "K_TRIP_DIST Gain coefficient for controlling robot speed.\n"
-		);
-	} else {
-		// set control gains for steering
-		K_PHI       = atof(argv[1]);
-		K_DISP      = atof(argv[2]);
-		K_TRIP_DIST = atof(argv[3]);
-	}
+    if (argc < 4) {
+        printf("Wrong number of arguments.  Using default values.\n"
+            "Usage: lswrto K_PHI K_DISP K_TRIP_DIST\n"
+               "K_PHI       Gain coefficient for how aggressively robot returns to angle.\n"
+               "K_DISP      Gain coefficient for how aggressively robot returns to path.\n"
+               "K_TRIP_DIST Gain coefficient for controlling robot speed.\n"
+        );
+    } else {
+        // set control gains for steering
+        K_PHI       = atof(argv[1]);
+        K_DISP      = atof(argv[2]);
+        K_TRIP_DIST = atof(argv[3]);
+    }
 
     // ROS set-ups:
     ros::init(argc, argv, "steeringController"); //node name

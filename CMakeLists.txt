@@ -38,6 +38,7 @@ cs_add_executable(lidar_braker2 src/lidar_alarm.cpp)
 
 # New in PS7
 cs_add_executable(lswrto src/lin_steering_wrt_odom.cpp)
+cs_add_executable(nl_steering src/mobot_nl_steering.cpp)
 cs_add_executable(drive_in_circles src/drive_in_circles.cpp)
 
 #the following is required, if desire to link a node in this package with a library created in this same package

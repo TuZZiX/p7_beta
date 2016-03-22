@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
     desStatePublisher.set_init_pose(0,0,0); //x=0, y=0, psi=0
     //put some points in the path queue--hard coded here
     if (argc > 1 && ( strcmp(argv[1], "jinx") == 0 )) {
-        double x = 5.4;
+        double x = 5.3;
         double y = -12;
         double v = 6.1 + 1.8 - 0.3; // 20 tiles + 3yd - 1ft for safety
         desStatePublisher.append_path_queue(x,   0.0,  0.0);

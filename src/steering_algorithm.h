@@ -34,12 +34,12 @@
 //#include <Eigen/LU>
 
 const double UPDATE_RATE = 50.0; // choose the desired-state publication update rate
-double K_PHI = 10.0; // control gains for steering
-double K_DISP = 3.0;
-double K_TRIP_DIST = 1.0;
+double K_PHI = 2.5; // control gains for steering
+double K_DISP = 1.5;
+double K_TRIP_DIST = 0.5;
 // dynamic limitations:  these apply to the steering controller; they may be larger than the limits on des state generation
-const double MAX_SPEED = 0.5; // m/sec; adjust this
-const double MAX_OMEGA = 0.5; //1.0; // rad/sec; adjust this
+const double MAX_SPEED = 0.3; // m/sec; adjust this
+const double MAX_OMEGA = 0.3; //1.0; // rad/sec; adjust this
 
 
 // define a class, including a constructor, member variables and member functions
