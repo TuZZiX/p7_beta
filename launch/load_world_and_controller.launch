@@ -18,18 +18,18 @@
 		name="rviz"
 		type="rviz"
 		/>
-
+<!--
 	<node
 		name= "des_state_subscriber"
 		pkg= "p7_beta"
-		type= "des_state_subscriber"
+		type= "des_state_subscriber_ps7"
 		output="screen"
 		/> 
-
+-->
 	<node
 		name= "lidar_braker"
 		pkg= "p7_beta"
-		type= "lidar_braker"
+		type= "lidar_braker_ps7"
 		/> 
 
 	<node

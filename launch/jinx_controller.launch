@@ -4,14 +4,14 @@
 	<node
 		name= "des_state_subscriber"
 		pkg= "p7_beta"
-		type= "des_state_subscriber"
+		type= "des_state_subscriber_ps7"
 		output="screen"
 		/> 
 
 	<node
 		name= "lidar_braker2"
 		pkg= "p7_beta"
-		type= "lidar_braker2"
+		type= "lidar_braker2_ps7"
 		args="1.0 0.5"
 		output="screen"
 		/> 
