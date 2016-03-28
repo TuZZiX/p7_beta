@@ -1,20 +1,8 @@
-# Problem set 5, group beta
+# Problem set 7, group beta
 
-Assignment on trajectory planning for PS5 and PS6.  It
-demonstrates the following behaviors:
+Assignment on trajectory planning for PS5 and PS6.  It demonstrates the ability to move from the elevator to the vending machines using a steering algorithm based on odometry. 
 
-+ graceful halt from LIDAR alarm
-+ graceful recovery from LIDAR alarm
-+ graceful recovery from wireless E-stop
-+ ability to execute open-loop control corresponding to a prescribed
-  polyline path
-+ ability to append subgoal poses to a prescribed path plan
-+ ability to flush a path plan and replace it
-
-Also included in this submission are three videos, one of the Gazebo
-simulation, one of the robot running on the rollers, and one of the
-robot moving from a spot near the elevator in the hallway outside the
-lab to a spot near the vending machines.
+Also included in this submission is a video of Jinx behavior when subjected to disturbances.
 
 ## Example usage
 
@@ -41,18 +29,6 @@ will be assumed. `stop` and `clear` are provided as easy mnemonics for
 the estop services, and `flush` will clear paths that have not yet
 been executed.
 
-### Gazebo specific
-
-Executing the following Gazebo-based launch file will bring up an
-instance of Gazebo complete with a mobot, a LIDAR obstacle detector,
-and an open-loop controller.  The second command will allow one to use
-the included services, detailed in the General section. The robot will
-move 5 meters forward and 5 meters backward.
-
-```
-$ roslaunch p5_beta load_world_and_controller.launch
-$ rosrun p5_beta des_state_publisher
-```
 
 ### Jinx specific
 
@@ -63,6 +39,6 @@ in the General section. The robot will move from the elevator to the
 vending machine.
 
 ```
-$ roslaunch p5_beta jinx_controller.launch
-$ rosrun p5_beta des_state_publisher jinx
+$ roslaunch p7_beta jinx_controller.launch
+$ rosrun p7_beta des_state_publisher jinx
 ```
